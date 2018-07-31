@@ -1,0 +1,74 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title>Classes</title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                class Foo {
+                    constructor(a, b) {
+                        this.x = a;
+                        this.y = b;
+                    }
+
+                    gimmeXY() {
+                        return this.x * this.y;
+                    }
+                }
+
+                var f = new Foo(2, 3);
+
+                console.log(f.gimmeXY());
+
+                class Bar extends Foo {
+                    constructor(a, b, c) {
+                        super(a, b);
+                        // console.log(super(a, b));
+                        this.z = c;
+                    }
+
+                    gimmeXYZ() {
+                        return super.gimmeXY() * this.z;
+                    }
+
+                    testMethod() {
+                        var foo = super.constructor;
+                        console.log(foo);
+                        var invoke = new foo();
+                        console.log(invoke);
+                    }
+
+                    static someTextInConsole(){
+                        console.log("Static invoking!");
+                    }
+                }
+
+                var d = new Bar(2, 3, 4);
+
+                console.log(d.gimmeXYZ());
+
+                d.testMethod();
+
+                Bar.someTextInConsole();
+
+                // Shape — суперкласс
+                // function Shape() {
+                // this.x = 0;
+                // this.y = 0;
+                // }
+
+                // // Rectangle — подкласс
+                // function Rectangle() {
+                //     //Shape.call(this); // вызываем конструктор суперкласса
+                // }
+
+                // // подкласс расширяет суперкласс
+                // // Rectangle.prototype = Object.create(Shape);
+                // Rectangle.prototype = Object.create(Shape.prototype);
+                // Rectangle.prototype.constructor = Rectangle;
+
+                // var rect = new Rectangle();
+                // console.log(rect);
+            </script>
+        </body>
+    </html>

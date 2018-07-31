@@ -1,0 +1,32 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                let arr = [1,2,3];
+
+                let [one, two, three] = arr;
+
+                /* console.log(one);
+                console.log(two);
+                console.log(three); */
+
+                let mySampleObj = {
+                    one: "One",
+                    two: "Two"
+                }
+
+                /* let { one: foo, two: bar } = mySampleObj;
+                console.log(foo);
+                console.log(bar); */
+
+                let myFunc = ({one, two}) => {
+                    console.log(one, two);
+                }
+
+                myFunc(mySampleObj);
+            </script>
+        </body>
+    </html>

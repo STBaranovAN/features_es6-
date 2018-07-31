@@ -1,0 +1,101 @@
+<DOCTYPE/>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //// Generator Funcs
+
+        /* function* myGen() {
+            let x = yield "This";
+            let y = yield "Is my";
+            console.log(x+y);
+            return "Generator";
+        }
+
+        let genObj = myGen();
+
+        console.log(genObj.next());
+        console.log(genObj.next("New"));
+        console.log(genObj.next(" sample string!")); */
+
+        /* for(let value of genObj) {
+            console.log(value);
+        } */
+
+        /* function* foo() {
+            try {
+                yield 1;
+            }
+            catch(err) {
+                console.log(err);
+            }
+
+            yield 2;
+
+            throw "Hello!";
+        }
+
+        var it = foo();
+
+        console.log(it.next());
+
+        try {
+            // it.throw("Hi!");
+            console.log(it.next());
+            // console.log(it.next());
+            console.log(it.next());
+            console.log("Never gets here!");
+        } catch (err) {
+            console.log(err);
+        } */
+
+        /* function* bar() {
+            try {
+                yield* foo();
+
+                console.log("never gets here");
+            }
+            catch (err) {
+                console.log(err);
+            }
+        } */
+
+        function* foo() {
+            try {
+                yield 1;
+            }
+            catch (err) {
+                console.log(err);
+            }
+
+            yield 2;
+
+            throw "foo: e2";
+        }
+
+        function* bar() {
+            yield* foo();
+            console.log("never gets here");
+        }
+
+        var it = bar();
+
+        try {
+            console.log("1");
+            console.log(it.next());
+            it.throw("e1");
+            console.log("2");
+            console.log(it.next());
+        } catch (err) {
+            console.log("never gets here");
+        }
+
+        console.log(it.next());
+    </script>
+</body>
+
+</html>

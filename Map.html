@@ -1,0 +1,29 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                var m = new Map();
+                m.set("foo", 42);
+                m.set({ cool: true }, "hello world");
+
+                console.log(m);
+
+                console.log(m.get("foo"));
+
+                console.log(m.has("foo"));
+
+                let it = m.entries();
+
+                var entry = it.next();
+
+                console.log(entry.value + " " + entry.done);
+
+                entry = it.next();
+
+                console.log(entry.value + " " + entry.done);
+            </script>
+        </body>
+    </html>

@@ -1,0 +1,80 @@
+<DOCTYPE/>
+<html>
+
+<head>
+    <title>Benchmarking</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/benchmark/2.1.4/benchmark.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var x = "42"; // need number `42`
+
+        function Opt1()
+        {
+            // Option 1: let implicit coercion automatically happen
+            var y = x / 2;
+        }
+
+        function Opt2()
+        {
+            // Option 2: use `parseInt(..)`
+            var y = parseInt( x, 0 ) / 2;
+        }
+
+        function Opt3()
+        {
+            // Option 3: use `Number(..)`
+            var y = Number( x ) / 2;
+        }
+
+        function Opt4()
+        {
+            // Option 4: use `+` unary operator
+            var y = +x / 2;
+        }
+
+        function Opt5()
+        {
+            // Option 5: use `|` unary operator
+            var y = (x | 0) / 2;
+        }
+
+        var benches = [new Benchmark(
+            "Option 1 test", // test name
+            Opt1 // function to test (just contents)
+        ),
+        new Benchmark(
+            "Option 2 test", // test name
+            Opt2 // function to test (just contents)
+        ),
+        new Benchmark(
+            "Option 3 test", // test name
+            Opt3 // function to test (just contents)
+        ),
+        new Benchmark(
+            "Option 4 test", // test name
+            Opt4 // function to test (just contents)
+        ),
+        new Benchmark(
+            "Option 5 test", // test name
+            Opt5 // function to test (just contents)
+        ),];
+
+        benches.forEach(function(bench) {
+            bench.run();
+            console.log(bench.toString());
+        });
+
+        // bench.run();
+        // console.log(bench.hz); // number of operations per second
+        // console.log(bench.stats.moe); // margin of error
+        // console.log(bench.stats.variance); // variance across samples
+
+        //You can use web platform for testing as well: https://jsperf.com
+    </script>
+</body>
+
+</html>

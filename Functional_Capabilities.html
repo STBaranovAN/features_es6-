@@ -1,0 +1,36 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                "use strict";    
+
+                var ARROW_FUNCS_ENABLED = false,
+                    TCO_ENABLED = false;
+
+                try {
+                    new Function("( () => {} )");
+                    ARROW_FUNCS_ENABLED = true;
+                } catch {
+                    console.log("Exception!");
+                    ARROW_FUNCS_ENABLED = false;
+                }
+
+                console.log(ARROW_FUNCS_ENABLED);
+
+                try {
+                    (function foo(x){
+                        if(x < 5E5) return foo(x + 1);
+                    })(1);
+                    TCO_ENABLED = true;
+                } catch (e) {
+                    console.log(e);
+                    TCO_ENABLED = false;
+                }
+
+                console.log(TCO_ENABLED);
+            </script>
+        </body>
+    </html>

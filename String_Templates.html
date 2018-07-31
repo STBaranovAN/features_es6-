@@ -1,0 +1,19 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                 let username = "John";
+                 let customText = `Username is ${username}`;
+                //  console.log(customText);
+
+                 function showTemplate(){
+                    console.log(arguments);
+                 }
+
+                 showTemplate`Hello world! ${username}`;
+            </script>
+        </body>
+    </html>

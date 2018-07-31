@@ -1,0 +1,56 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title>Collections</title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                var m = new Map();
+                var a = { id: 1 },
+                    b = { id: 2 };
+
+                m.set(a, "first").set(b, "second");
+
+                var vals = [...m.values()];
+
+                console.log(vals);
+                console.log(m.has(b));
+                console.log(m.delete(a));
+
+                vals = [...m.values()];
+                console.log(vals);
+
+                m.clear();
+
+                vals = [...m.values()];
+                console.log(vals);
+
+                var s = new Set();
+                var x = { id: 1 },
+                    y = { id: 2 };
+
+                s.add(x).add(y);
+
+                var keys = [...s.keys()];
+                console.log(keys);
+
+                var values = [...s.values()];
+                console.log(values);
+
+                var entries = [...s.entries()];
+                console.log(entries);
+
+                let mySet = new Set(["Peter", "John", "Anna"]);
+                console.log(mySet.has("Peter"));
+                mySet.add("Peter");
+                console.log(mySet.entries());
+                mySet.add("Olga");
+                console.log(...mySet.entries());
+                mySet.delete("Olga");
+                console.log(...mySet.entries());
+
+                mySet.clear();
+                console.log(...mySet.entries());
+            </script>
+        </body>
+    </html>

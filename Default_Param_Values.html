@@ -1,0 +1,38 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                 /* function foo(x = 11, y = 31)
+                 {
+                     console.log(x + y);
+                 }
+
+                 foo(); */
+
+                 /* function bar(val) {
+                     console.log("bar called!");
+                     return y + val;
+                 }
+
+                 function foo(x = y + 3, z = bar(x)) {
+                    console.log(x, z);
+                 }
+
+                 var y = 5;
+                 foo();
+                 foo(5);
+                 foo(10, 20); */
+
+                 var w = 1, z = 2;
+
+                 function foo(x = w + 1, y = x + 1, z = z + 1) {
+                     console.log(x, y, z);
+                 }
+
+                 foo();
+            </script>
+        </body>
+    </html>

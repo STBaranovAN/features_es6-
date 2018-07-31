@@ -1,0 +1,42 @@
+<DOCTYPE/>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <script type="text/javascript">
+                 let username = () => "Andrew";
+                 console.log(username("Andrew"));
+
+                 let sampleObj = {
+                    city: "LA",
+                    go: function(){
+                        // console.log(this);
+                        // function innerFunc(){
+                        // 	console.log(this);
+                        // }
+                        // innerFunc.call(this);
+
+                        var innerArr = () => {
+                            console.log(this);
+                        }
+                        innerArr();	
+                    },
+                    joke: () => {
+                        console.log(this); /// Window
+                    },
+                    test: function(){
+                        console.log(this);
+                    }
+                }
+
+                sampleObj.go();
+                sampleObj.joke();
+                sampleObj.test();
+
+                x = y => y;
+
+                console.log(x(2));                
+            </script>
+        </body>
+    </html>
